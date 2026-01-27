@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-API_KEY=os.getenv("COHERE_KEY")
+API_KEY=os.getenv("COHERE_API_KEY")
 
 
 co = cohere.Client(api_key=API_KEY)
