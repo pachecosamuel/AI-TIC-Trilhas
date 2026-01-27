@@ -10,7 +10,6 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    # model="meta-llama-3.1-8b-instruct",
     model="gpt-4o-mini",
     messages=[
         {"role": "system", "content": "Você é um especialista em IA"},
