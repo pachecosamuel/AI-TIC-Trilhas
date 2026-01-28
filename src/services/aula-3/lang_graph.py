@@ -52,13 +52,12 @@ thread_id = uuid.uuid4()
 config = {"configurable": {"thread_id": thread_id}}
 
 query = "Olá, eu sou o Samuel!"
-
 input_messages = [HumanMessage(query)]
 output = app.invoke({"messages": input_messages}, config)
 output["messages"][-1].pretty_print()
 
-query = "Como eu me chamo?"
 
+query = "Como eu me chamo?"
 input_messages = [HumanMessage(query)]
 output = app.invoke({"messages": input_messages}, config)
 output["messages"][-1].pretty_print()

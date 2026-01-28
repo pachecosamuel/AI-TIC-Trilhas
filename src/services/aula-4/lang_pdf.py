@@ -6,37 +6,38 @@ from langchain_core.runnables import Runnable
 from dotenv import load_dotenv
 
 # Carregar e preparar o PDF
-
 loader = PyPDFLoader("aulam2a4/clima_brasil.pdf")
 docs = loader.load()
 
-# Concatenar o conteúdo
 
+# Concatenar o conteúdo
 contexto = docs
 
-# Definir a pergunta
 
+# Definir a pergunta
 pergunta = "Qual é o principal argumento do documento?"
 
-# Template de prompt
 
+# Template de prompt
 template = """
 Responda a pergunta abaixo com base no contexto fornecido. Se a pergunta não puder ser respondida com o contexto, diga que não sabe. Seja amigável e útil.:
 {contexto}
 {pergunta}
-
 Answer:
-
 """
-prompt = PromptTemplate(template=template, input_variables=["pergunta", "contexto"])
+
+prompt = PromptTemplate(
+   template=template,
+   input_variables=["pergunta", "contexto"]
+)
 llm = ChatOpenAI(model="gpt-4o-mini")
 
-# Criar cadeia de resposta
 
+# Criar cadeia de resposta
 qna_chain = prompt | llm
 
-# Definir grafo de execução
 
+# Definir grafo de execução
 class State(dict):
    pergunta: str
    contexto: list

@@ -27,7 +27,7 @@ model = ChatCohere(
     temperature=0.2
 )
 
-system_template = "Traduza o seguinte texto de inglês para português"
+system_template = "Traduza o seguinte texto de inglês para {idioma}"
 
 prompt_template = ChatPromptTemplate.from_messages(
     [
@@ -37,6 +37,7 @@ prompt_template = ChatPromptTemplate.from_messages(
 )
 
 prompt = prompt_template.invoke({
+    "idioma": "Italian",
     "text": "Hello World!"
 })
 
