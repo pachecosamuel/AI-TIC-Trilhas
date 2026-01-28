@@ -4,6 +4,7 @@ import getpass
 from dotenv import load_dotenv
 from langchain_cohere import ChatCohere
 from langchain.chat_models import init_chat_model
+from langgraph.checkpoint.sqlite import SqliteSaver
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.messages import HumanMessage, SystemMessage
 
@@ -44,6 +45,7 @@ workflow.add_edge(START, "model")
 workflow.add_node("model", call_model)
 
 # Armazenamento da memória da conversa
+# memory = SqliteSaver("memory.db")
 memory = MemorySaver()
 app = workflow.compile(checkpointer=memory)
 
