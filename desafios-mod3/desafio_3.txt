@@ -1,0 +1,19 @@
+Atividade Prática - Chat com o PDF
+Construindo uma Interface Inteligente com LLMs e Streamlit
+Nesta atividade, você irá desenvolver uma aplicação que permite ao usuário enviar um arquivo PDF, extrair o conteúdo textual do documento e utilizá-lo como contexto para respostas de um modelo de linguagem grande (LLM).
+
+Passo a passo:
+Configure seu ambiente Python com as bibliotecas necessárias: langchain, langchain_community, langgraph, streamlit e openai.
+Defina um prompt dinâmico usando ChatPromptTemplate que receba duas variáveis: o contexto (texto extraído do PDF) e a pergunta do usuário. O prompt deve instruir o modelo a responder com base no contexto ou dizer que não sabe caso a resposta não esteja no documento.
+Implemente uma função que:
+Receba a pergunta e o contexto (texto do PDF).
+Envie essas informações ao modelo LLM usando a pipeline definida.
+Use o StateGraph para montar o fluxo da aplicação, com entrada, processamento e saída.
+Crie uma interface web com Streamlit que:
+Permita ao usuário fazer upload de um arquivo PDF (st.file_uploader).
+Utilize o PyPDFLoader para extrair o texto do PDF carregado.
+Armazene o histórico da conversa, exibindo as mensagens do usuário e do assistente.
+Permita ao usuário digitar perguntas, enviando-as para o backend junto com o texto extraído do PDF.
+Exiba as respostas do modelo na interface.
+Teste a aplicação com PDFs e perguntas relacionadas ao conteúdo para verificar a coerência das respostas baseadas no documento.
+ 

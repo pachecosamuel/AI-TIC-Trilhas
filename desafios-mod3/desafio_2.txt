@@ -1,0 +1,23 @@
+Atividade Prática - Pedalando com a IA
+Desenvolvendo um Chatbot com Memória e Emojis
+Nesta atividade, você irá desenvolver um chatbot para uma loja de bicicletas que mantém o histórico da conversa, possui um tom amigável e se integra a uma interface gráfica web.
+
+Passo a passo:
+Configure seu ambiente Python com as bibliotecas necessárias (langchain, langgraph, streamlit e openai).
+
+Defina um prompt de sistema para o chatbot com um tom amigável, usando emojis e instruções para ser prestativo, por exemplo:
+
+"Você é um assistente de IA que ajuda os usuários a encontrar informações sobre produtos de uma loja de bicicleta. Seja amigável, prestativo e use emojis e trocadilhos. Se não souber, diga que não sabe."
+
+Crie um ChatPromptTemplate que integre esse prompt de sistema e um placeholder para o histórico das mensagens.
+
+Inicialize o modelo de linguagem (ChatOpenAI) configurando a chave da API.
+
+Utilize o LangGraph para montar um grafo de estados que gerencia o fluxo da conversa, incluindo uma função para gerar respostas baseadas no histórico.
+
+Desenvolva uma interface web com Streamlit que:
+
+Exiba o histórico da conversa, formatando as mensagens do usuário e do assistente.
+Permita ao usuário inserir novas mensagens.
+Atualize o histórico da conversa e envie as mensagens ao modelo para obter respostas.
+Teste a aplicação fazendo uma sequência de perguntas relacionadas à loja de bicicletas, verificando se o chatbot mantém a coerência e o tom amigável.

@@ -1,0 +1,13 @@
+Atividade Prática - Streaming de respostas para uma aplicação de chat com LLMs
+Nesta atividade, você irá aprimorar uma aplicação de chatbot para que as respostas do modelo de linguagem grande (LLM) sejam exibidas em tempo real, melhorando a interatividade e a experiência do usuário.
+
+Passo a passo:
+Configure seu ambiente Python com as bibliotecas necessárias (langchain, langgraph, streamlit, openai e PyMuPDF).
+Inicialize o modelo ChatOpenAI com o parâmetro streaming=True para ativar a geração de texto em blocos (streaming).
+No backend (função de geração no LangGraph), substitua o método .invoke() pelo .stream() para obter os blocos de texto conforme forem sendo gerados.
+Na interface com Streamlit:
+Mantenha o histórico de conversa armazenado em st.session_state.
+Use a função st.chat_message() para criar uma caixa de mensagem do assistente.
+Utilize o método write_stream() para atualizar a interface conforme cada bloco da resposta chega.
+Concatene os blocos para montar a resposta completa e atualize o histórico com a mensagem final.
+5. Teste a aplicação enviando perguntas e observe a resposta sendo exibida progressivamente, sem esperar a geração completa.

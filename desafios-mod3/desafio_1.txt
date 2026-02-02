@@ -1,0 +1,27 @@
+Atividade Prática - Interface com LLMs usando Streamlit
+Nesta atividade, você irá desenvolver uma interface gráfica simples em Python que permita que usuários interajam com um modelo de linguagem grande (LLM) sem necessidade de programar.
+
+Passo a passo:
+1. Instale o Streamlit em seu ambiente Python, se ainda não o fez:
+
+
+# bash
+# Copy
+pip install streamlit
+        
+2. Crie um arquivo Python chamado app.pyLinks to an external site. com o seguinte conteúdo básico:
+
+Defina o título da aplicação na interface com st.title().
+Crie uma área de texto (st.text_area) para o usuário digitar a pergunta.
+Adicione um botão (st.button) que, ao ser clicado, envia a pergunta para o modelo LLM.
+Utilize a biblioteca LangChain para inicializar um LLM simples (ex: OpenAI()).
+Exiba a resposta do modelo na tela com st.write().
+3. Execute a aplicação com o comando:
+
+
+# bash
+# Copy
+streamlit run app.py
+Links to an external site.
+        
+4. Teste a aplicação digitando perguntas diferentes e observando as respostas exibidas no navegador.
